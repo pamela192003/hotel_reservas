@@ -68,8 +68,6 @@
                 <?= \Csrf::field() ?>
                 <input type="hidden" name="id_reserva" value="<?= $r['id_reserva'] ?>">
                 <button class="btn icon delete" title="Eliminar">🗑️</button>
-
-                
               </form>
             </td>
           </tr>
@@ -79,59 +77,3 @@
     </div>
   </div>
 </section>
-
-<div class="card" style="padding:0">
-  <div style="padding:14px 16px;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;align-items:center">
-    <strong>Lista de Pagos</strong>
-    <a class="btn primary" href="<?= BASE_URL ?>pagos/crear">Nueva</a>
-  </div>
-  <div style="padding:16px; overflow:auto">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <?php if($user['rol']==='admin'): ?><th>Usuario</th><?php endif; ?>
-          <th>Reserva</th>
-          <th>Fecha</th>
-          <th>Monto</th>
-          <th>Método</th>
-          <th>Estado</th>
-          <th>Transacción</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-      <?php foreach($pagos as $p): ?>
-        <tr>
-          <td><?= $p['id_pago'] ?></td>
-
-          <?php if($user['rol']==='admin'): ?>
-            <td><?= htmlspecialchars(($p['nombre'] ?? '').' '.($p['apellido'] ?? '')) ?></td>
-          <?php endif; ?>
-
-          <td>#<?= $p['id_reserva'] ?></td>
-          <td><?= $p['fecha_pago'] ?></td>
-          <td>S/. <?= number_format($p['monto'],2) ?></td>
-          <td><?= ucfirst($p['metodo']) ?></td>
-          <td><span class="badge <?= $p['estado'] ?>"><?= $p['estado'] ?></span></td>
-          <td><?= $p['transaccion_id'] ?: '-' ?></td>
-
-          <td class="table-actions">
-            <!-- Cambiar estado de pago -->
-            <form method="post" action="<?= BASE_URL ?>pagos/cambiar_estado">
-              <?= \Csrf::field() ?>
-              <input type="hidden" name="id_pago" value="<?= $p['id_pago'] ?>">
-              <select class="input" name="estado" onchange="this.form.submit()">
-                <?php foreach(['pendiente','completado','fallido'] as $e): ?>
-                  <option value="<?= $e ?>" <?= $e===$p['estado']?'selected':'' ?>><?= ucfirst($e) ?></option>
-                <?php endforeach; ?>
-              </select>
-            </form>
-
-          </td>
-        </tr>
-      <?php endforeach; ?>
-      </tbody>
-    </table>
-  </div>
-</div>
