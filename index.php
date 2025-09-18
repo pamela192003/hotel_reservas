@@ -48,7 +48,7 @@ if($controller==='auth' && $action==='registrar'){
   if($_SERVER['REQUEST_METHOD']==='POST'){
     if(($_POST['csrf']??'') !== ($_SESSION['csrf']??'')) die("CSRF inválido");
     Usuario::create($_POST['nombre'],$_POST['apellido'],$_POST['usuario'],$_POST['telefono'],$_POST['password']);
-    echo '<section class="card"><div class="alert ok">Cuenta creada, ahora inicia sesión.</div><a class="btn" href="'.BASE_URL.'auth/login">Ir al login</a></section>';
+    echo '<section class="card"><div class="alert ok">Cuenta creada, ahora inicia sesión.</div><a class="btn" href="'.BASE_URL.'view/auth/login">Ir al login</a></section>';
   } else {
     echo '<section class="card"><h2>Registro</h2><form method="post">'.\Csrf::field().'
       <div class="form-row">
