@@ -35,11 +35,11 @@
                                     <input type="hidden" name="estado" value="<?= $cliente['estado'] ? 0 : 1 ?>">
                                     <button type="submit" class="btn small"><?= $cliente['estado'] ? 'Desactivar' : 'Activar' ?></button>
                                 </form>
-                                <form method="post" action="<?= BASE_URL ?>client_api/eliminar" style="display:inline-block;">
+                                <!--<form method="post" action="<?= BASE_URL ?>client_api/eliminar" style="display:inline-block;">
                                     <?= \Csrf::field() ?>
                                     <input type="hidden" name="id" value="<?= $cliente['id'] ?>">
                                     <button type="submit" class="btn small danger">Eliminar</button>
-                                </form>
+                                </form>-->
                             </td>
                         </tr>
                     <?php endforeach; ?>

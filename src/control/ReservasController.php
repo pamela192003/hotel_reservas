@@ -18,6 +18,7 @@ class ReservasController extends BaseController {
       $data = [
         'id_usuario' => $user['id'],
         'id_habitacion' => (int)($_POST['id_habitacion']??0),
+        'id_hotel' => (int)($_POST['id_hotel']??0),
         'fecha_inicio' => $_POST['fecha_inicio']??'',
         'fecha_fin' => $_POST['fecha_fin']??'',
         'monto_total' => (float)($_POST['monto_total']??0)

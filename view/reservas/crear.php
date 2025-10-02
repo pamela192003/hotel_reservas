@@ -10,6 +10,12 @@
         <input class="input" type="number" min="1" name="id_habitacion" placeholder="Ej. 204" required>
       </div>
 
+       <div class="form-row two-cols">
+      <div class="col">
+        <label>Hotel</label>
+        <input class="input" type="text" min="1" name="id_hotel" placeholder="5 mentarios" required>
+      </div>
+
       <div class="col">
         <label>Monto total</label>
         <input class="input" type="number" step="0.01" min="0" name="monto_total" placeholder="Ej. 120.00" required>

@@ -14,7 +14,7 @@ class Reserva {
   }
   public static function create($data){
     $db = Conexion::getConexion();
-    $st = $db->prepare("INSERT INTO reservas(id_usuario,id_habitacion,fecha_inicio,fecha_fin,estado,monto_total) VALUES(?,?,?,?,?,?)");
+    $st = $db->prepare("INSERT INTO reservas(id_usuario,id_habitacion,id_hotel,fecha_inicio,fecha_fin,estado,monto_total) VALUES(?,?,?,?,?,?)");
     $st->execute([
       $data['id_usuario'],$data['id_habitacion'],$data['fecha_inicio'],$data['fecha_fin'],'pendiente',$data['monto_total']
     ]);

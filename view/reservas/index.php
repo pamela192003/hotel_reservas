@@ -7,12 +7,13 @@
     </div>
     <div style="padding:16px; overflow:auto">
       <table class="table">
-        <thead><tr><th>#</th><th>Habitación</th><th>Inicio</th><th>Fin</th><th>Estado</th><th>Monto</th></tr></thead>
+        <thead><tr><th>#</th><th>Habitación</th><th>Hotel</th><th>Inicio</th><th>Fin</th><th>Estado</th><th>Monto</th></tr></thead>
         <tbody>
         <?php foreach($reservas as $r): ?>
           <tr>
             <td><?= $r['id_reserva'] ?></td>
             <td><?= $r['id_habitacion'] ?></td>
+            <td><?= $r['id_hotel'] ?></td>
             <td><?= $r['fecha_inicio'] ?></td>
             <td><?= $r['fecha_fin'] ?></td>
             <td><span class="badge <?= $r['estado'] ?>"><?= $r['estado'] ?></span></td>
