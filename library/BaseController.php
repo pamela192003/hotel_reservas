@@ -6,9 +6,9 @@ class BaseController {
   protected function view($path, $data = []){
     extract($data);
     $is_login = ($path === 'auth/login');
-    include __DIR__ . '/../view/partials/header.php';
-    include __DIR__ . '/../view/'.$path.'.php';
-    include __DIR__ . '/../view/partials/footer.php';
+    include __DIR__ . '/../src/view/partials/header.php';
+    include __DIR__ . '/../src/view/'.$path.'.php';
+    include __DIR__ . '/../src/view/partials/footer.php';
   }
   protected function redirect($to){
     header("Location: ".BASE_URL.$to);

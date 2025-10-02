@@ -4,6 +4,21 @@
   <form method="post">
     <?= \Csrf::field() ?>
 
+<div class="form-row two-cols">
+  <div class="col">
+    <label>Hotel</label>
+    <select class="input" name="hotel" required>
+      <option value="">Seleccione un hotel</option>
+      <?php foreach($hoteles as $h): ?>
+        <option value="<?= htmlspecialchars($h['id']) ?>">
+          <?= htmlspecialchars($h['nombre']) ?>
+        </option>
+      <?php endforeach; ?>
+    </select>
+  </div>
+</div>
+
+
     <div class="form-row two-cols">
       <div class="col">
         <label>Habitación</label>
