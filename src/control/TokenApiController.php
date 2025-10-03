@@ -1,3 +1,4 @@
+```php
 <?php
 require_once __DIR__."/../../library/BaseController.php";
 require_once __DIR__."/../model/TokenApi.php";
@@ -17,10 +18,14 @@ class TokenApiController extends BaseController {
         if ($this->isPost()) {
             $this->verify_csrf();
             $data = [
-                'id_client_api' => (int)($_POST['id_client_api'] ?? 0),
-                'token' => $_POST['token'] ?? ''
+                'id_client_api' => (int)($_POST['id_client_api'] ?? 0)
+                // Ya no pedimos el token, se genera en el modelo
             ];
-            $id = TokenApi::create($data);
+            $result = TokenApi::create($data);
+
+            // Si quieres mostrar el token generado después de crear:
+            // $_SESSION['mensaje'] = "Token generado: " . $result['token'];
+
             $this->redirect('tokens_api');
         } else {
             $clientes = ClientApi::all();
@@ -36,8 +41,8 @@ class TokenApiController extends BaseController {
         if ($this->isPost()) {
             $this->verify_csrf();
             $data = [
-                'id_client_api' => (int)($_POST['id_client_api'] ?? 0),
-                'token' => $_POST['token'] ?? ''
+                'id_client_api' => (int)($_POST['id_client_api'] ?? 0)
+                // Token también se genera en el modelo al actualizar
             ];
             TokenApi::update($id, $data);
             $this->redirect('tokens_api');
@@ -69,3 +74,4 @@ class TokenApiController extends BaseController {
     }
 }
 ?>
+```

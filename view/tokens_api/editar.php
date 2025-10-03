@@ -1,6 +1,7 @@
+```php
 <section class="card">
     <h2>Editar Token API</h2>
-    <p class="muted">Edita los datos del token.</p>
+    <p class="muted">Cambia el cliente asociado. El token se regenerará automáticamente.</p>
     <form method="post">
         <?= \Csrf::field() ?>
         <div class="form-row">
@@ -16,12 +17,6 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="col">
-                <label>Token</label>
-                <input class="input" type="text" name="token" value="<?= htmlspecialchars($token['token']) ?>" required>
-            </div>
-        </div>
-        <div class="form-row">
             <div class="col-12">
                 <button class="btn primary">Guardar</button>
                 <a class="btn" href="<?= BASE_URL ?>tokens_api">Cancelar</a>
@@ -29,3 +24,4 @@
         </div>
     </form>
 </section>
+```
