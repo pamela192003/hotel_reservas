@@ -38,5 +38,19 @@ class ClientApi {
         $st = $db->prepare("DELETE FROM client_api WHERE id=?");
         return $st->execute([$id]);
     }
+
+    // 🔹 Nueva función: obtener reservas por nombre de cliente
+    public static function verReservasApiByNombre($nombre) {
+        $db = Conexion::getConexion();
+        $st = $db->prepare("
+            SELECT r.*, c.razon_social, c.ruc
+            FROM reservas r
+            INNER JOIN client_api c ON r.id_client_api = c.id
+            WHERE c.razon_social LIKE ?
+            ORDER BY r.fecha_reserva DESC
+        ");
+        $st->execute(['%' . $nombre . '%']);
+        return $st->fetchAll();
+    }
 }
 ?>

@@ -1,4 +1,4 @@
-```php
+
 <section class="card">
     <h2>Nuevo Token API</h2>
     <p class="muted">Selecciona el cliente, el token se generará automáticamente.</p>
@@ -22,4 +22,4 @@
         </div>
     </form>
 </section>
-```
+

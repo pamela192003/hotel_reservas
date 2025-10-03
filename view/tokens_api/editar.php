@@ -1,4 +1,4 @@
-```php
+
 <section class="card">
     <h2>Editar Token API</h2>
     <p class="muted">Cambia el cliente asociado. El token se regenerará automáticamente.</p>
@@ -24,4 +24,3 @@
         </div>
     </form>
 </section>
-```

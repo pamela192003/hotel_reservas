@@ -1,4 +1,4 @@
-```php
+
 <section>
     <h2 style="margin:0 0 8px;font-size:28px">Tokens API</h2>
     <div class="card" style="padding:0">
@@ -54,4 +54,4 @@
         </div>
     </div>
 </section>
-```
+

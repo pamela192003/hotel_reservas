@@ -1,4 +1,4 @@
-```php
+
 <?php
 require_once __DIR__."/../../library/BaseController.php";
 require_once __DIR__."/../model/TokenApi.php";
@@ -74,4 +74,4 @@ class TokenApiController extends BaseController {
     }
 }
 ?>
-```
+

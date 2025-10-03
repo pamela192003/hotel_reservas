@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__."/../../library/BaseController.php";
 require_once __DIR__."/../model/ClientApi.php";
+require_once __DIR__."/../model/Reserva.php"; // <-- Asegúrate de tener este modelo
 require_once __DIR__."/../../library/Csrf.php";
 
 class ClientApiController extends BaseController {
@@ -68,5 +69,17 @@ class ClientApiController extends BaseController {
         }
         $this->redirect('client_api');
     }
+
+    // 🔹 Nueva función: ver reservas por nombre de cliente
+    public function verReservasApiByNombre() {
+        $this->needAuth();
+        $nombre = $_GET['nombre'] ?? '';
+
+        if (!empty($nombre)) {
+            $reservas = ClientApi::verReservasApiByNombre($nombre);
+            $this->view('reservas/ver_por_cliente', compact('reservas', 'nombre'));
+        } else {
+            $this->redirect('reservas');
+        }
+    }
 }
-?>
