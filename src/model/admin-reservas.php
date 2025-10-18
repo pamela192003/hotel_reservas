@@ -27,9 +27,9 @@ class ReservaModel
         }
         return $sql;
     }
-    public function actualizarUsuario($iduser,$nombre,$apellido,$usuario,$telefono,$rol,$estado)
+    public function actualizarReserva($id_reserva,$habitacion,$hotel,$fecha_inicio,$fecha_fin,$monto_total,$estado)
     {
-        $sql = $this->conexion->query("UPDATE usuarios SET nombre='$nombre',apellido='$apellido',usuario='$usuario',telefono='$telefono',rol='$rol',activo ='$estado' WHERE id_usuario='$iduser'");
+        $sql = $this->conexion->query("UPDATE reservas SET id_habitacion='$habitacion',id_hotel='$hotel',fecha_inicio='$fecha_inicio',fecha_fin='$fecha_fin',estado='$estado',monto_total ='$monto_total' WHERE id_reserva='$id_reserva'");
         return $sql;
     }
   public function buscarReservaById($id)

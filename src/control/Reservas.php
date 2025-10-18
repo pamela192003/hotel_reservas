@@ -92,7 +92,7 @@ if($tipo == "obtenerReserva"){
         $idReserva = $_POST['id'];
         $arrReserva = $objReservas->buscarReservaById($idReserva);
         if($arrReserva){
-           $arr_Respuesta = array('status' => true, 'mensaje' => 'exito' ,'contenido'=> $arrUsuario);
+           $arr_Respuesta = array('status' => true, 'mensaje' => 'exito' ,'contenido'=> $arrReserva);
         }else{
             $arr_Respuesta = array('status' => false, 'mensaje' => 'error consulta');
         }
@@ -102,18 +102,18 @@ if($tipo == "obtenerReserva"){
 if($tipo == "actualizar"){
      $arr_Respuesta = array('status' => false, 'mensaje' => 'Error_Sesion');
     if ($objSesion->verificar_sesion_si_activa($id_sesion, $token)) {
-      $iduser =   $_POST['data'];
-      $nombre =   $_POST['nombre-n'];
-      $apellido = $_POST['apellido-n'];
-      $usuario =  $_POST['usuario-n'];
-      $telefono = $_POST['telefono-n'];
-      $rol =      $_POST['rol-n'];
-      $estado =   $_POST['estado-n'];
+      $id_reserva =   $_POST['data'];
+      $habitacion =   $_POST['habitacion-n'];
+      $hotel = $_POST['hotel-n'];
+      $fecha_inicio =  $_POST['fechaInicio-n'];
+      $fecha_fin = $_POST['fechaFin-n'];
+      $estado =      $_POST['estado'];
+      $monto_total =   $_POST['monto-n'];
 
-      if($iduser == ''|| $nombre == ''|| $apellido == ''|| $usuario == ''|| $telefono == ''|| $rol == ''|| $estado == ''){
+      if($id_reserva == ''|| $habitacion == ''|| $hotel == ''|| $fecha_inicio == ''|| $fecha_fin == ''|| $estado == ''|| $monto_total == ''){
            $arr_Respuesta = array('status' => false, 'mensaje' => 'datos invalidos'); 
       }else{
-       $actualizar = $objUsuario->actualizarUsuario($iduser,$nombre,$apellido,$usuario,$telefono,$rol,$estado);
+       $actualizar = $objReservas->actualizarReserva($id_reserva,$habitacion,$hotel,$fecha_inicio,$fecha_fin,$monto_total,$estado);
        if($actualizar){
        $arr_Respuesta = array('status' => true, 'mensaje' => 'actualizado');
        }else{

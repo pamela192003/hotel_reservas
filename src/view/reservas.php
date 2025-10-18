@@ -197,7 +197,7 @@
                             <label for="usuario" class="form-label fw-bold">Usuario</label>
                             <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese el nombre de usuario" required>
                         </div> -->
-                        <input type="hidden" id="data" name=data"" value="">
+                        <input type="hidden" id="data" name="data" value="">
                         <div class="mb-3">
                             <label for="habitacion-n" class="form-label fw-bold">Habitación</label>
                             <input type="number" class="form-control" id="habitacion-n" name="habitacion-n" placeholder="Número de habitación" required>
@@ -225,7 +225,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="estado" class="form-label fw-bold">Estado</label>
-                                <select name="estado" id="estado">
+                                <select class="form-select" id="estado" name="estado" required>
                                     <option value="pendiente">pendiente</option>
                                     <option value="confirmada">confirmada</option>
                                     <option value="cancelada">cancelada</option>

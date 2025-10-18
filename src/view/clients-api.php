@@ -64,17 +64,17 @@
                     <thead class="table-light">
                         <tr>
                             <th class="fw-bold">#</th>
-                            <th class="fw-bold">Nombre Cliente</th>
+                            <th class="fw-bold">RUC</th>
                             <th class="fw-bold">Empresa</th>
-                            <th class="fw-bold">Email</th>
                             <th class="fw-bold">Teléfono</th>
+                            <th class="fw-bold">Correo</th>                           
                             <th class="fw-bold">Estado</th>
                             <th class="fw-bold">Tokens</th>
                             <th class="fw-bold">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
+                    <tbody id="tbody_clientsApi">
+<!--                         <tr>
                             <td class="fw-bold">1</td>
                             <td>Tech Solutions S.A.</td>
                             <td>Tech Solutions</td>
@@ -96,145 +96,7 @@
                                     <i class="bi bi-trash"></i>
                                 </button>
                             </td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold">2</td>
-                            <td>Digital Innovations</td>
-                            <td>Digital Innovations LLC</td>
-                            <td>api@digitalinnovations.com</td>
-                            <td>+51 987 654 002</td>
-                            <td><span class="badge bg-success">Activo</span></td>
-                            <td><span class="badge bg-info text-dark">2 tokens</span></td>
-                            <td>
-                                <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalGestionTokens" title="Gestionar Tokens">
-                                    <i class="bi bi-key"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-primary" title="Ver detalles">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-warning" title="Editar">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-danger" title="Eliminar">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold">3</td>
-                            <td>Cloud Services Pro</td>
-                            <td>Cloud Services Pro</td>
-                            <td>info@cloudservicespro.com</td>
-                            <td>+51 987 654 003</td>
-                            <td><span class="badge bg-success">Activo</span></td>
-                            <td><span class="badge bg-info text-dark">5 tokens</span></td>
-                            <td>
-                                <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalGestionTokens" title="Gestionar Tokens">
-                                    <i class="bi bi-key"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-primary" title="Ver detalles">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-warning" title="Editar">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-danger" title="Eliminar">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold">4</td>
-                            <td>Enterprise Systems</td>
-                            <td>Enterprise Systems Inc</td>
-                            <td>enterprise@systemsinc.com</td>
-                            <td>+51 987 654 004</td>
-                            <td><span class="badge bg-warning text-dark">Inactivo</span></td>
-                            <td><span class="badge bg-secondary">1 token</span></td>
-                            <td>
-                                <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalGestionTokens" title="Gestionar Tokens">
-                                    <i class="bi bi-key"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-primary" title="Ver detalles">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-warning" title="Editar">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-danger" title="Eliminar">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold">5</td>
-                            <td>Mobile First Development</td>
-                            <td>Mobile First Dev</td>
-                            <td>dev@mobilefirst.com</td>
-                            <td>+51 987 654 005</td>
-                            <td><span class="badge bg-success">Activo</span></td>
-                            <td><span class="badge bg-info text-dark">4 tokens</span></td>
-                            <td>
-                                <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalGestionTokens" title="Gestionar Tokens">
-                                    <i class="bi bi-key"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-primary" title="Ver detalles">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-warning" title="Editar">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-danger" title="Eliminar">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold">6</td>
-                            <td>Data Analytics Corp</td>
-                            <td>Data Analytics</td>
-                            <td>analytics@datacorp.com</td>
-                            <td>+51 987 654 006</td>
-                            <td><span class="badge bg-danger">Suspendido</span></td>
-                            <td><span class="badge bg-secondary">0 tokens</span></td>
-                            <td>
-                                <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalGestionTokens" title="Gestionar Tokens">
-                                    <i class="bi bi-key"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-primary" title="Ver detalles">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-warning" title="Editar">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-danger" title="Eliminar">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold">7</td>
-                            <td>Web Design Studio</td>
-                            <td>Web Design Studio</td>
-                            <td>studio@webdesign.com</td>
-                            <td>+51 987 654 007</td>
-                            <td><span class="badge bg-success">Activo</span></td>
-                            <td><span class="badge bg-info text-dark">2 tokens</span></td>
-                            <td>
-                                <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalGestionTokens" title="Gestionar Tokens">
-                                    <i class="bi bi-key"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-primary" title="Ver detalles">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-warning" title="Editar">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-danger" title="Eliminar">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
+                        </tr>   -->           
                     </tbody>
                 </table>
             </div>
@@ -270,28 +132,29 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="new_clienteApi">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="nombreCliente" class="form-label fw-bold">Nombre del Cliente</label>
-                                <input type="text" class="form-control" id="nombreCliente" placeholder="Nombre de la empresa" required>
+                                <label for="ruc" class="form-label fw-bold">Ruc</label>
+                                <input type="text" class="form-control" id="ruc" name="ruc" placeholder="Nombre de la empresa" required>
+                                <span class=" text-secondary"> *11 digitos</span>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="empresaCliente" class="form-label fw-bold">Empresa</label>
-                                <input type="text" class="form-control" id="empresaCliente" placeholder="Nombre empresa" required>
+                                <input type="text" class="form-control" id="empresaCliente" name="empresaCliente" placeholder="Nombre empresa" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="emailCliente" class="form-label fw-bold">Email</label>
-                                <input type="email" class="form-control" id="emailCliente" placeholder="correo@empresa.com" required>
+                                <input type="email" class="form-control" id="emailCliente" name="emailCliente" placeholder="correo@empresa.com" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="telefonoCliente" class="form-label fw-bold">Teléfono</label>
-                                <input type="tel" class="form-control" id="telefonoCliente" placeholder="+51 987 654 321" required>
+                                <input type="tel" class="form-control" id="telefonoCliente" name="telefonoCliente" placeholder="+51 987 654 321" required>
                             </div>
                         </div>
-                        <div class="row">
+<!--                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="estadoCliente" class="form-label fw-bold">Estado</label>
                                 <select class="form-select" id="estadoCliente" required>
@@ -300,15 +163,7 @@
                                     <option value="suspendido">Suspendido</option>
                                 </select>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="limitRequests" class="form-label fw-bold">Límite de Requests</label>
-                                <input type="number" class="form-control" id="limitRequests" placeholder="10000" min="100" required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="descripcion" class="form-label fw-bold">Descripción / Notas</label>
-                            <textarea class="form-control" id="descripcion" rows="3" placeholder="Información adicional del cliente..."></textarea>
-                        </div>
+                        </div> -->
                         <div class="alert alert-info" role="alert">
                             <i class="bi bi-info-circle"></i>
                             <strong>Nota:</strong> Después de crear el cliente podrás generar sus tokens API.
@@ -317,8 +172,63 @@
                 </div>
                 <div class="modal-footer border-top-0">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" class="btn btn-primary" onclick="registrarCliente();">
                         <i class="bi bi-check-circle"></i> Crear Cliente
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- MODAL DE actualizar CLIENTE API -->
+    <div class="modal fade" id="modalEditarCliente" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white border-0">
+                    <h5 class="modal-title" id="modalLabel">
+                        <i class="bi bi-plus-circle"></i>actualizar Cliente API
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="act_clienteApi">
+                        <div class="row">
+                            <input type="hidden" name="data" id="data" value="">
+                            <div class="col-md-6 mb-3">
+                                <label for="ruc-n" class="form-label fw-bold">Ruc</label>
+                                <input type="text" class="form-control" id="ruc-n" name="ruc-n" placeholder="Nombre de la empresa" required>
+                                <span class=" text-secondary"> *11 digitos</span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="empresaCliente-n" class="form-label fw-bold">Empresa</label>
+                                <input type="text" class="form-control" id="empresaCliente-n" name="empresaCliente-n" placeholder="Nombre empresa" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="emailCliente-n" class="form-label fw-bold">Email</label>
+                                <input type="email" class="form-control" id="emailCliente-n" name="emailCliente-n" placeholder="correo@empresa.com" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="telefonoCliente-n" class="form-label fw-bold">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefonoCliente-n" name="telefonoCliente-n" placeholder="+51 987 654 321" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="estadoCliente-n" class="form-label fw-bold">Estado</label>
+                                <select class="form-select" id="estadoCliente-n" name="estadoCliente-n" required>
+                                    <option value="1">Activo</option>
+                                    <option value="0">Inactivo</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="actualizarCliente();">
+                        <i class="bi bi-check-circle"></i> Actualizar Cliente
                     </button>
                 </div>
             </div>
@@ -336,12 +246,12 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <input type="hidden" id="data" name="data">
                     <!-- SECCIÓN GENERAR TOKEN -->
                     <div class="mb-4">
                         <h6 class="fw-bold mb-3">Generar Nuevo Token</h6>
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Nombre del token (ej: Production, Development)...">
-                            <button class="btn btn-success" type="button">
+                            <button class="btn btn-success" type="button" onclick="generarToken();">
                                 <i class="bi bi-plus-circle"></i> Generar Token
                             </button>
                         </div>
@@ -356,17 +266,15 @@
                             <table class="table table-sm table-hover">
                                 <thead class="table-light">
                                     <tr>
-                                        <th class="fw-bold">Nombre</th>
+                                        <th class="fw-bold">#</th>
                                         <th class="fw-bold">Token</th>
                                         <th class="fw-bold">Estado</th>
                                         <th class="fw-bold">Fecha Creación</th>
-                                        <th class="fw-bold">Último Uso</th>
                                         <th class="fw-bold">Acciones</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="fw-bold">Production Token</td>
+                                <tbody id="tbody_tokens">
+<!--                                     <tr>
                                         <td>
                                             <code class="text-muted">sk_live_abc123def456...</code>
                                             <button class="btn btn-sm btn-link p-0 ms-2" title="Copiar">
@@ -375,7 +283,6 @@
                                         </td>
                                         <td><span class="badge bg-success">Activo</span></td>
                                         <td>2025-01-15</td>
-                                        <td>2025-10-17 14:30</td>
                                         <td>
                                             <button class="btn btn-sm btn-outline-warning" title="Desactivar">
                                                 <i class="bi bi-toggle-on"></i>
@@ -384,53 +291,10 @@
                                                 <i class="bi bi-trash"></i>
                                             </button>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="fw-bold">Development Token</td>
-                                        <td>
-                                            <code class="text-muted">sk_test_ghi789jkl012...</code>
-                                            <button class="btn btn-sm btn-link p-0 ms-2" title="Copiar">
-                                                <i class="bi bi-clipboard"></i>
-                                            </button>
-                                        </td>
-                                        <td><span class="badge bg-success">Activo</span></td>
-                                        <td>2025-02-20</td>
-                                        <td>2025-10-10 09:15</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-warning" title="Desactivar">
-                                                <i class="bi bi-toggle-on"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger" title="Eliminar">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="fw-bold">Staging Token</td>
-                                        <td>
-                                            <code class="text-muted">sk_test_mno345pqr678...</code>
-                                            <button class="btn btn-sm btn-link p-0 ms-2" title="Copiar">
-                                                <i class="bi bi-clipboard"></i>
-                                            </button>
-                                        </td>
-                                        <td><span class="badge bg-secondary">Inactivo</span></td>
-                                        <td>2025-03-10</td>
-                                        <td>-</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-success" title="Activar">
-                                                <i class="bi bi-toggle-off"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger" title="Eliminar">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
-                        <small class="text-muted d-block mt-2">
-                            <i class="bi bi-info-circle"></i> Total: 3 tokens
-                        </small>
                     </div>
                 </div>
                 <div class="modal-footer border-top-0">
@@ -441,4 +305,3 @@
     </div>
 
     <script src="<?php echo BASE_URL;?>src/view/js/clients_api.js"></script>
-    <script src="<?php echo BASE_URL;?>src/view/js/tokens_api.js"></script>

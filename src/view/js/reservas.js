@@ -115,6 +115,7 @@ async function listarReserva(id){
         console.log('error function ||' + e);
     }
 }
+
 async function actualizarReserva() {
     const form = document.getElementById('frm_act_reserva');
     try {
@@ -136,7 +137,7 @@ async function actualizarReserva() {
                 timer: 1000,
                 showConfirmButton: false
             });
-            listarUsuarios();
+            listarReservas();
         } else if (json.memsaje === "Error_Sesion") {
             alerta_sesion(); 
         } else {
