@@ -181,4 +181,68 @@
         </div>
     </div>
 
+        <!-- MODAL DE ACTUALIZAR RESERVA -->
+    <div class="modal fade" id="modalActualizarReserva" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white border-0">
+                    <h5 class="modal-title" id="modalLabel">
+                        <i class="bi bi-plus-circle"></i> Nueva Reserva
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="frm_act_reserva">
+    <!--                <div class="mb-3">
+                            <label for="usuario" class="form-label fw-bold">Usuario</label>
+                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese el nombre de usuario" required>
+                        </div> -->
+                        <input type="hidden" id="data" name=data"" value="">
+                        <div class="mb-3">
+                            <label for="habitacion-n" class="form-label fw-bold">Habitación</label>
+                            <input type="number" class="form-control" id="habitacion-n" name="habitacion-n" placeholder="Número de habitación" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="hotel-n" class="form-label fw-bold">Hotel</label>
+                            <input type="number" class="form-control" id="hotel-n" name="hotel-n" placeholder="hotel id" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="fechaInicio-n" class="form-label fw-bold">Fecha de Inicio</label>
+                                <input type="date" class="form-control" id="fechaInicio-n" name="fechaInicio-n" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="fechaFin-n" class="form-label fw-bold">Fecha de Fin</label>
+                                <input type="date" class="form-control" id="fechaFin-n" name="fechaFin-n" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="monto-n" class="form-label fw-bold">Monto</label>
+                                <input type="number" class="form-control" id="monto-n" name="monto-n" placeholder="S/. 0.00" step="0.01" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="estado" class="form-label fw-bold">Estado</label>
+                                <select name="estado" id="estado">
+                                    <option value="pendiente">pendiente</option>
+                                    <option value="confirmada">confirmada</option>
+                                    <option value="cancelada">cancelada</option>
+                                    <option value="finalizada">finalizada</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="actualizarReserva();">
+                        <i class="bi bi-check-circle"></i> Actualizar Reserva
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="<?php echo BASE_URL;?>src/view/js/reservas.js"></script>

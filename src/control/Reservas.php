@@ -68,7 +68,7 @@ if($tipo == "listarReservas"){
                 $usuario = $objUsuario->buscarUsuarioById($arrReservas[$i]->id_usuario);
                 $arrReservas[$i]->username = $usuario->nombre;
 
-                $opciones = '<button class="btn btn-sm btn-outline-warning" title="Editar" onclick="listarUsuario('.$arrReservas[$i]->id_reserva.');" data-bs-toggle="modal" data-bs-target="#modalEditarUsuario">
+                $opciones = '<button class="btn btn-sm btn-outline-warning" title="Editar" onclick="listarReserva('.$arrReservas[$i]->id_reserva.');" data-bs-toggle="modal" data-bs-target="#modalActualizarReserva">
                                     <i class="bi bi-pencil"></i>
                                 </button>
                                 <button class="btn btn-sm btn-outline-danger" title="Eliminar">
@@ -86,12 +86,12 @@ if($tipo == "listarReservas"){
     echo json_encode($arr_Respuesta);
 }
 
-if($tipo == "obtenerUsuario"){
+if($tipo == "obtenerReserva"){
      $arr_Respuesta = array('status' => false, 'mensaje' => 'Error_Sesion');
     if ($objSesion->verificar_sesion_si_activa($id_sesion, $token)) {
-        $iduser = $_POST['id'];
-        $arrUsuario = $objUsuario->buscarUsuarioById($iduser);
-        if($arrUsuario){
+        $idReserva = $_POST['id'];
+        $arrReserva = $objReservas->buscarReservaById($idReserva);
+        if($arrReserva){
            $arr_Respuesta = array('status' => true, 'mensaje' => 'exito' ,'contenido'=> $arrUsuario);
         }else{
             $arr_Respuesta = array('status' => false, 'mensaje' => 'error consulta');

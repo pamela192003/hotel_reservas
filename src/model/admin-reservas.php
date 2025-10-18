@@ -32,9 +32,9 @@ class ReservaModel
         $sql = $this->conexion->query("UPDATE usuarios SET nombre='$nombre',apellido='$apellido',usuario='$usuario',telefono='$telefono',rol='$rol',activo ='$estado' WHERE id_usuario='$iduser'");
         return $sql;
     }
-  public function buscarUsuarioById($id)
+  public function buscarReservaById($id)
     {
-        $sql = $this->conexion->query("SELECT * FROM usuarios WHERE id_usuario='$id'");
+        $sql = $this->conexion->query("SELECT * FROM reservas WHERE id_reserva='$id'");
         $sql = $sql->fetch_object();
         return $sql;
     }

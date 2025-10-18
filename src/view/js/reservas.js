@@ -84,30 +84,30 @@ try {
 } 
 }
 
-async function listarUsuario(id){
+async function listarReserva(id){
     let data = document.getElementById("data");
-    let nombre = document.getElementById("nombre-n");
-    let apellido = document.getElementById("apellido-n");
-    let usuario = document.getElementById("usuario-n");
-    let telefono = document.getElementById("telefono-n");
-    let rol = document.getElementById("rol-n");
-    let estado = document.getElementById("estado-n");
+    let habitacion = document.getElementById("habitacion-n");
+    let hotel = document.getElementById("hotel-n");
+    let fecha_inicio = document.getElementById("fechaInicio-n");
+    let fecha_fin = document.getElementById("fechaFin-n");
+    let monto = document.getElementById("monto-n");
+    let estado = document.getElementById("estado");
     try {
     let informacion = new FormData();
     informacion.append('sesion', session_session); 
     informacion.append('token', token_token); 
     informacion.append('id',id);
-    const respuesta = await fetching('obtenerUsuario', informacion);
+    const respuesta = await fetching('obtenerReserva', informacion);
     const json = await respuesta.json();
     if(json.status){
     let datos = json.contenido;
        data.value = id;
-       nombre.value = datos.nombre;
-       apellido.value = datos.apellido;
-       usuario.value = datos.usuario;
-       telefono.value = datos.telefono;
-       rol.value = datos.rol;
-       estado.value = datos.activo;
+       habitacion.value = datos.id_habitacion;
+       hotel.value = datos.id_hotel;
+       fecha_inicio.value = datos.fecha_inicio;
+       fecha_fin.value = datos.fecha_fin;
+       monto.value = datos.monto_total;
+       estado.value = datos.estado;
     }else{
      console.log(json.mensaje);
     }
@@ -115,17 +115,17 @@ async function listarUsuario(id){
         console.log('error function ||' + e);
     }
 }
-async function actualizarUser() {
-    const form = document.getElementById('frm_act_user');
+async function actualizarReserva() {
+    const form = document.getElementById('frm_act_reserva');
     try {
-        const datos = new FormData(frm_act_user);
+        const datos = new FormData(frm_act_reserva);
         datos.append('sesion', session_session); 
         datos.append('token', token_token); 
         const respuesta = await fetching('actualizar', datos);
         const json = await respuesta.json();
         if (json.status) {
             form.reset();
-            let modalEl = document.getElementById("modalEditarUsuario");
+            let modalEl = document.getElementById("modalActualizarReserva");
             let modal = bootstrap.Modal.getInstance(modalEl);
             modal.hide();
             Swal.fire({
