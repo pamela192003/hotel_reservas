@@ -1,7 +1,8 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /hotel_reservas/
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
-</IfModule>
+RewriteEngine On
+Options All -Indexes
+
+# 1️ Regla ESPECÍFICA primero: conserva la query-string
+RewriteRule ^reset-password$ src/view/reset-password.php [L,QSA]
+
+# 2️ Regla GENÉRICA después
+RewriteRule ^([a-zA-Z0-9/ñÑ-]+)$ index.php?views=$1 [L,QSA]
