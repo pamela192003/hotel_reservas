@@ -113,7 +113,7 @@
                 <div class="card shadow-sm border-0">
                     <div class="card-body">
                         <small class="text-muted text-uppercase fw-bold">Total Reservas</small>
-                        <h2 class="mt-2 mb-2">9</h2>
+                        <h2 class="mt-2 mb-2" id="totalReservas">9</h2>
                         <small class="text-muted">Todas las reservas</small>
                     </div>
                 </div>
@@ -146,177 +146,72 @@
                 </div>
             </div>
         </div>
-
-        <!-- TABLA DE RESERVAS -->
+               <!-- ENCABEZADO LISTA DE RESERVAS -->
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h3>Lista de Reservas</h3>
-            <button class="btn btn-primary-gradient" data-bs-toggle="modal" data-bs-target="#modalNuevaReserva">
-                Nueva
-            </button>
+            <h3 class="fw-bold">Últimas Reservas</h3>
+            <a href="reservas" class="btn btn-sm btn-outline-primary">
+                <i class="bi bi-arrow-right"></i> Ver todas
+            </a>
         </div>
 
-        <div class="table-container">
+        <!-- TABLA DE RESERVAS -->
+        <div class="card border-0 shadow-sm">
             <div class="table-responsive">
                 <table class="table table-hover mb-0">
-                    <thead>
+                    <thead class="table-light">
                         <tr>
-                            <th>#</th>
-                            <th>Usuario</th>
-                            <th>Hab</th>
-                            <th>Inicio</th>
-                            <th>Fin</th>
-                            <th>Estado</th>
-                            <th>Monto</th>
-                            <th>Acciones</th>
+                            <th class="fw-bold">#</th>
+                            <th class="fw-bold">Usuario</th>
+                            <th class="fw-bold">Habitación</th>
+                            <th class="fw-bold">Hotel</th>
+                            <th class="fw-bold">Fecha Inicio</th>
+                            <th class="fw-bold">Fecha Fin</th>
+                            <th class="fw-bold">Estado</th>
+                            <th class="fw-bold">Monto</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>21</td>
+                    <tbody id="tbody-reservas">
+<!--                         <tr>
+                            <td class="fw-bold">21</td>
                             <td>Admin Sistema</td>
-                            <td>21</td>
+                            <td><span class="badge bg-info text-dark">21</span></td>
+                            <td>tres dilan</td>
                             <td>2025-09-16</td>
                             <td>2025-09-18</td>
-                            <td><span class="badge badge-cancelada">cancelada</span></td>
-                            <td>S/. 2,112.00</td>
+                            <td><span class="badge bg-danger">Cancelada</span></td>
+                            <td class="fw-bold text-success">S/. 2,112.00</td>
                             <td>
-                                <select class="estado-select">
-                                    <option>Cancelada</option>
-                                </select>
-                                <button class="btn-edit">✎</button>
-                                <button class="btn-delete">🗑</button>
+                                <button class="btn btn-sm btn-outline-primary" title="Ver">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-warning" title="Editar">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Eliminar">
+                                    <i class="bi bi-trash"></i>
+                                </button>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td>Admin Sistema</td>
-                            <td>2</td>
-                            <td>0034-04-04</td>
-                            <td>2025-04-22</td>
-                            <td><span class="badge badge-confirmada">confirmada</span></td>
-                            <td>S/. 44.00</td>
-                            <td>
-                                <select class="estado-select">
-                                    <option>Confirmada</option>
-                                </select>
-                                <button class="btn-edit">✎</button>
-                                <button class="btn-delete">🗑</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>19</td>
-                            <td>Admin Sistema</td>
-                            <td>79</td>
-                            <td>2025-09-01</td>
-                            <td>2025-09-02</td>
-                            <td><span class="badge badge-finalizada">finalizada</span></td>
-                            <td>S/. 89.00</td>
-                            <td>
-                                <select class="estado-select">
-                                    <option>Finalizada</option>
-                                </select>
-                                <button class="btn-edit">✎</button>
-                                <button class="btn-delete">🗑</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>18</td>
-                            <td>Admin Sistema</td>
-                            <td>57</td>
-                            <td>2025-09-10</td>
-                            <td>2025-09-25</td>
-                            <td><span class="badge badge-confirmada">confirmada</span></td>
-                            <td>S/. 40.00</td>
-                            <td>
-                                <select class="estado-select">
-                                    <option>Confirmada</option>
-                                </select>
-                                <button class="btn-edit">✎</button>
-                                <button class="btn-delete">🗑</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>17</td>
-                            <td>Admin Sistema</td>
-                            <td>11</td>
-                            <td>2025-09-04</td>
-                            <td>2025-09-09</td>
-                            <td><span class="badge badge-pendiente">pendiente</span></td>
-                            <td>S/. 80.00</td>
-                            <td>
-                                <select class="estado-select">
-                                    <option>Pendiente</option>
-                                </select>
-                                <button class="btn-edit">✎</button>
-                                <button class="btn-delete">🗑</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>Carlos Ramírez</td>
-                            <td>101</td>
-                            <td>2025-09-15</td>
-                            <td>2025-09-18</td>
-                            <td><span class="badge badge-confirmada">confirmada</span></td>
-                            <td>S/. 360.00</td>
-                            <td>
-                                <select class="estado-select">
-                                    <option>Confirmada</option>
-                                </select>
-                                <button class="btn-edit">✎</button>
-                                <button class="btn-delete">🗑</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>Carlos Ramírez</td>
-                            <td>102</td>
-                            <td>2025-09-20</td>
-                            <td>2025-09-22</td>
-                            <td><span class="badge badge-confirmada">confirmada</span></td>
-                            <td>S/. 300.00</td>
-                            <td>
-                                <select class="estado-select">
-                                    <option>Confirmada</option>
-                                </select>
-                                <button class="btn-edit">✎</button>
-                                <button class="btn-delete">🗑</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>Lucía Martínez</td>
-                            <td>201</td>
-                            <td>2025-09-10</td>
-                            <td>2025-09-12</td>
-                            <td><span class="badge badge-cancelada">cancelada</span></td>
-                            <td>S/. 180.00</td>
-                            <td>
-                                <select class="estado-select">
-                                    <option>Cancelada</option>
-                                </select>
-                                <button class="btn-edit">✎</button>
-                                <button class="btn-delete">🗑</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Pedro González</td>
-                            <td>202</td>
-                            <td>2025-09-25</td>
-                            <td>2025-09-30</td>
-                            <td><span class="badge badge-pendiente">pendiente</span></td>
-                            <td>S/. 800.00</td>
-                            <td>
-                                <select class="estado-select">
-                                    <option>Pendiente</option>
-                                </select>
-                                <button class="btn-edit">✎</button>
-                                <button class="btn-delete">🗑</button>
-                            </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
+            </div>
+
+            <!-- PAGINACIÓN -->
+            <div class="card-footer bg-white border-top">
+                <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Mostrando 1-9 de 9 registros</small>
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination pagination-sm mb-0">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">Siguiente</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
     </section>
@@ -324,7 +219,7 @@
 
     
     <!-- MODAL DE NUEVA RESERVA -->
-    <div class="modal fade" id="modalNuevaReserva" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+<!--     <div class="modal fade" id="modalNuevaReserva" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -371,4 +266,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
+      <script src="<?php echo BASE_URL;?>src/view/js/inicio.js"></script>

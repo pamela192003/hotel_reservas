@@ -152,9 +152,14 @@ async function actualizarCliente() {
     }
 }
 
+function asignarValuesToken(id){
+    let datatoken = document.getElementById("dataToken");
+    datatoken.value = id;
+    listarTokensCliente(id);
+}
 async function listarTokensCliente(id) {
-    let data = document.getElementById("data");
-    data.value = id;
+    let bodyHtml = document.getElementById("tbody_tokens");
+      bodyHtml.innerHTML = '';
         try {
         let datos = new FormData();
           datos.append('token', token_token);  
@@ -162,9 +167,9 @@ async function listarTokensCliente(id) {
           datos.append('id', id); 
           const respuesta = await fetching('obtenerTokensCliente', datos);
           json = await respuesta.json();
-          let bodyHtml = document.getElementById("tbody_tokens");
+        
           if(json.status){
-            bodyHtml.innerHTML = '';
+            
             let datos = json.contenido;
             let cont = 0;
             datos.forEach((item) => {
@@ -210,7 +215,7 @@ function generarToken(){
 }
 
 async function generarTokenClient() {
-    let dataClient = document.getElementById("data").value;
+    let dataClient = document.getElementById("dataToken").value;
     try {
           let datos = new FormData();
           datos.append('token', token_token);  
@@ -240,7 +245,7 @@ async function generarTokenClient() {
 }
 
 async function cambiarEstado(idtoken, estado){
-     let dataClient = document.getElementById("data").value;
+     let dataClient = document.getElementById("dataToken").value;
     try {
         let datos = new FormData();
           datos.append('token', token_token);  

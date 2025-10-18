@@ -241,12 +241,12 @@
             <div class="modal-content">
                 <div class="modal-header bg-info text-white border-0">
                     <h5 class="modal-title" id="modalTokensLabel">
-                        <i class="bi bi-key"></i> Gestión de Tokens - Tech Solutions S.A.
+                        <i class="bi bi-key"></i> Gestión de Tokens
                     </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <input type="hidden" id="data" name="data">
+                    
                     <!-- SECCIÓN GENERAR TOKEN -->
                     <div class="mb-4">
                         <h6 class="fw-bold mb-3">Generar Nuevo Token</h6>
@@ -256,6 +256,7 @@
                             </button>
                         </div>
                     </div>
+                    <input type="hidden" id="dataToken" name="dataToken" value="">
 
                     <hr>
 

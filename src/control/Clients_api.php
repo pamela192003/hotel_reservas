@@ -53,7 +53,7 @@ if($tipo == "listarClientesApi"){
 
                 $arrClientesApi[$i]->status = $arrClientesApi[$i]->estado == 1? '<span class="badge bg-success">Activo</span>':'<span class="badge bg-warning text-dark">Inactivo</span>';
 
-                $opciones = '<button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalGestionTokens" title="Gestionar Tokens" onclick="listarTokensCliente('.$arrClientesApi[$i]->id.')">
+                $opciones = '<button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalGestionTokens" title="Gestionar Tokens" onclick="asignarValuesToken('.$arrClientesApi[$i]->id.');">
                                     <i class="bi bi-key"></i>
                                 </button>
                                 <button class="btn btn-sm btn-outline-warning" title="Editar" data-bs-toggle="modal" data-bs-target="#modalEditarCliente" onclick="listarCliente('.$arrClientesApi[$i]->id.');">
