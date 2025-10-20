@@ -1,6 +1,6 @@
 <?php
 const BD_HOST = 'localhost';
-const BD_NAME = 'hotel_reservas';
+const BD_NAME = 'hotelpan';
 const BD_USER = 'root';
 const BD_PASSWORD = 'root';
 
