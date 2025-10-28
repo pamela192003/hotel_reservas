@@ -1,4 +1,17 @@
 <?php
+// Habilitar CORS
+header("Access-Control-Allow-Origin: *"); // o puedes poner un dominio específico
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+
+// Si la solicitud es de tipo OPTIONS (preflight), responder sin procesar lógica
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
+// ... tu código PHP normal aquí ...
+
 require_once('../model/admin-apiModel.php');
 $tipo = $_GET['tipo'];
 //instanciar la clase categoria model
