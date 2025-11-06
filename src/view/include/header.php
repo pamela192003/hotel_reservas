@@ -270,10 +270,11 @@
                     <span>Clientes API</span>
                 </a>
                  </a>
-                <a href="<?php echo BASE_URL;?>token" class="<?php echo $client?>">
-                    <span>🔌</span>
-                    <span>Tokens Api</span>
+               <a href="<?php echo BASE_URL;?>token" class="<?php echo $client?>">
+                 <i class="bi bi-key"></i>
+                <span>Tokens API</span>
                 </a>
+
 <!--                 <a href="">
                     <span>🔑</span>
                     <span>Tokens API</span>
