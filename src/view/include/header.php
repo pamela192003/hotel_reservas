@@ -180,6 +180,15 @@
                 width: 60px;
                 padding: 16px 0;
             }
+            /* ==================== CONTENIDO PRINCIPAL ==================== */
+.main-content {
+    margin-left: 200px; /* deja espacio para el sidebar */
+    padding: 90px 30px 30px; /* espacio para la barra superior y los lados */
+    flex-grow: 1;
+    background-color: #f9fafb;
+    min-height: 100vh;
+}
+
 
             .sidebar-logo {
                 padding: 0;
@@ -259,6 +268,11 @@
                 <a href="<?php echo BASE_URL;?>clients-api" class="<?php echo $client?>">
                     <span>🔌</span>
                     <span>Clientes API</span>
+                </a>
+                 </a>
+                <a href="<?php echo BASE_URL;?>token" class="<?php echo $client?>">
+                    <span>🔌</span>
+                    <span>Tokens Api</span>
                 </a>
 <!--                 <a href="">
                     <span>🔑</span>

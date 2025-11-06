@@ -4,7 +4,7 @@ class vistaModelo
     protected static function obtener_vista($vista)
     {
 
-        $palabras_permitidas_n1 = ['inicio', 'usuarios', 'tokens-api', 'clients-api','reservas'];
+        $palabras_permitidas_n1 = ['inicio', 'usuarios', 'tokens-api', 'clients-api','reservas','token'];
 
         if (in_array($vista, $palabras_permitidas_n1)) {
 
