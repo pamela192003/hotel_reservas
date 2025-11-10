@@ -237,6 +237,12 @@
             case 'clients-api':
                 $client = 'active';
                 break;
+            case 'token':
+                $token = 'active';
+                break;
+            case 'api':
+                $api = 'active';
+                break;
 /*             case 'tokens-api':
                 $token = 'active';
                 break; */
@@ -270,10 +276,15 @@
                     <span>Clientes API</span>
                 </a>
                  </a>
-               <a href="<?php echo BASE_URL;?>token" class="<?php echo $client?>">
+               <a href="<?php echo BASE_URL;?>token" class="<?php echo $token?>">
                  <i class="bi bi-key"></i>
                 <span>Tokens API</span>
                 </a>
+
+                 <a href="<?php echo BASE_URL;?>api" class="<?php echo $api?>">
+                <i class="bi bi-cloud"></i>
+                  <span>API</span>
+                    </a>
 
 <!--                 <a href="">
                     <span>🔑</span>
