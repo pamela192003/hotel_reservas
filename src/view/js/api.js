@@ -1,10 +1,10 @@
 // ===== CONFIGURACIÓN DE LA API =====
-const API_CONFIG = {
-    baseURL: 'https://hoteles.programacion.com.pe/src/control/apiController.php', // Cambiar por tu dominio
-    token: '4be7fc9e606427b7769e02c5bb56d0dc6540a73abd25048b409b00df70d570a7-20251112-1' // Tu token de acceso
-};
-/*const token = '69df1475dfefa5e87ad70de12423880b4938438dc4e86359f146d5d8aba56736-20251106-6';
-const baseURL = 'https://hoteles.programacion.com.pe/src/control/apiController.php',*/
+//const API_CONFIG = {
+    //baseURL: 'https://hoteles.programacion.com.pe/src/control/apiController.php', // Cambiar por tu dominio
+    //token: '4be7fc9e606427b7769e02c5bb56d0dc6540a73abd25048b409b00df70d570a7-20251112-1' // Tu token de acceso
+//};
+const baseURL = 'https://hoteles.programacion.com.pe/src/control/apiController.php?tipo=';
+const token = '83aef4639fa44974ec9186d339b25d6a56c3367be5b077e856a4bb85159e5e12-20251030-1';
 // ===== CACHE DE DATOS =====
 let hotelesCache = [];
 
@@ -55,7 +55,7 @@ function mostrarLoader(show = true) {
  */
 async function fetchAPI(endpoint, method = 'GET', body = null) {
     try {
-        const url = `${API_CONFIG.baseURL}?tipo=${endpoint}&token=${API_CONFIG.token}`;
+        const url = `${baseURL}${endpoint}&token=${token}`;
         
         const options = {
             method: method,
