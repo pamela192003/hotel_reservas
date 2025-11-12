@@ -25,6 +25,7 @@ class ApiModel
         $sql = $sql->fetch_object();
         return $sql->estado;
     }
+    
     public function listarReservas(){
         $respuesta = array();
         $sql = $this->conexion->query("SELECT * FROM reservas");

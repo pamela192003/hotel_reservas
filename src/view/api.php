@@ -72,6 +72,6 @@
         </div>
     </footer>
 
-    <script src="api.js"></script>
+    <script src="<?php echo BASE_URL; ?>src/view/js/api.js"></script>
 </body>
 </html>

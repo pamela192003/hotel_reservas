@@ -39,6 +39,7 @@ if($estadoCliente != 1){
     echo json_encode($arr_Respuesta);
     exit;
 }
+
 $validarClienteToken = $objApi->validarClienteToken($id_cliente , $token);
 if(!$validarClienteToken){
     $arr_Respuesta = array('status' => false, 'mensaje' => 'Acceso no autorizado - token inactivo o invalido');

@@ -4,7 +4,7 @@ class vistaModelo
     protected static function obtener_vista($vista)
     {
 
-        $palabras_permitidas_n1 = ['inicio', 'usuarios', 'tokens-api', 'clients-api','reservas','token','api'];
+        $palabras_permitidas_n1 = ['inicio', 'usuarios', 'tokens-api', 'clients-api','reservas','token'];
 
         if (in_array($vista, $palabras_permitidas_n1)) {
 
@@ -19,6 +19,8 @@ class vistaModelo
             $contenido = "login";
         } elseif ($vista == "reset-password") {
              $contenido = "reset-password";
+        }elseif ($vista == "api") {
+             $contenido = "api";
         }else{
             $contenido = "404";
         }
