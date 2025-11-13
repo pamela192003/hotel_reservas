@@ -1,10 +1,9 @@
 // ===== CONFIGURACIÓN DE LA API =====
-//const API_CONFIG = {
-    //baseURL: 'https://hoteles.programacion.com.pe/src/control/apiController.php', // Cambiar por tu dominio
-    //token: '4be7fc9e606427b7769e02c5bb56d0dc6540a73abd25048b409b00df70d570a7-20251112-1' // Tu token de acceso
-//};
-const baseURL = 'https://hoteles.programacion.com.pe/src/control/apiController.php?tipo=';
-const token = '83aef4639fa44974ec9186d339b25d6a56c3367be5b077e856a4bb85159e5e12-20251030-1';
+const API_CONFIG = {
+    baseURL: 'http://localhost/hoteles/src/control/apiController.php?tipo=', // Cambiar por tu dominio
+    token: '7bc59c804b140e6555b1f47bbc4be65388d5dbcd9c950507c0327fb14cac51d1-20251112-124' // Tu token de acceso
+};
+
 // ===== CACHE DE DATOS =====
 let hotelesCache = [];
 
@@ -55,7 +54,7 @@ function mostrarLoader(show = true) {
  */
 async function fetchAPI(endpoint, method = 'GET', body = null) {
     try {
-        const url = `${baseURL}${endpoint}&token=${token}`;
+        const url = `${API_CONFIG.baseURL}${endpoint}&token=${API_CONFIG.token}`;
         
         const options = {
             method: method,
@@ -72,16 +71,16 @@ async function fetchAPI(endpoint, method = 'GET', body = null) {
         const data = await response.json();
         
         if (!data.status) {
-            console.error('Error en API:', data.msg);
-            return { success: false, msg: data.msg, data: [] };
+            console.error('Error en API:', data.mensaje);
+            return { success: false, mensaje: data.mensaje, data: [] };
         }
         
-        return { success: true, data: data.contenido || [], msg: data.msg };
+        return { success: true, data: data.contenido || [], mensaje: data.mensaje };
     } catch (error) {
         console.error('Error de conexión:', error);
         return { 
             success: false, 
-            msg: 'Error de conexión con el servidor', 
+            mensaje: 'Error de conexión con el servidor', 
             data: [] 
         };
     }
