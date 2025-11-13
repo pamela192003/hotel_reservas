@@ -1,7 +1,7 @@
 // ===== CONFIGURACIÓN DE LA API =====
 const API_CONFIG = {
     baseURL: 'https://hoteles.programacion.com.pe/src/control/apiController.php?tipo=', // Cambiar por tu dominio
-    token: '7bc59c804b140e6555b1f47bbc4be65388d5dbcd9c950507c0327fb14cac51d1-20251112-124' // Tu token de acceso
+    token: '83aef4639fa44974ec9186d339b25d6a56c3367be5b077e856a4bb85159e5e12-20251030-1' // Tu token de acceso
 };
 
 // ===== CACHE DE DATOS =====
