@@ -76,6 +76,27 @@
             <p>&copy; 2025 HotelSeek. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <style>
+        .btn-outline-purple {
+    border: 2px solid #a855f7;
+    background-color: transparent;
+    color: #a855f7;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-purple:hover {
+    background-color: #a855f7;
+    color: #fff;
+    transform: scale(1.03);
+}
+
+    </style>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="<?php echo BASE_URL; ?>src/view/js/api.js"></script>
 </body>

@@ -100,16 +100,33 @@ async function fetchAPI(endpoint, method = 'GET', body = null) {
         const response = await fetch(url, options);
         const data = await response.json();
         
+        // Aquí va tu bloque 👇
         if (!data.status) {
-    console.error('Error en API:', data.mensaje);
+            console.error('Error en API:', data.mensaje);
 
-    // Mostrar alerta con SweetAlert
-    Swal.fire({
-        icon: 'error',
-        title: 'Error en API',
-        text: data.mensaje || 'Ocurrió un error desconocido',
-        confirmButtonText: 'Aceptar'
-    });
+           Swal.fire({
+    title: '🔑 Token inválido',
+    html: `
+        <p style="font-size: 1.1rem; color:#555;">
+            ${data.mensaje || 'Tu token ha expirado o no es válido.'}
+        </p>
+    `,
+    icon: 'error',
+    iconColor: '#a855f7',
+    background: 'linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)',
+    color: '#333',
+    confirmButtonText: 'Entendido 💜',
+    showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+    },
+    customClass: {
+        confirmButton: 'btn-outline-purple'
+    },
+    buttonsStyling: false // 🔥 Necesario para aplicar tus propios estilos
+});
 
     return { success: false, mensaje: data.mensaje, data: [] };
 }
