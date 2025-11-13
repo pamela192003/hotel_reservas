@@ -1,6 +1,6 @@
 // ===== CONFIGURACIÓN DE LA API =====
 const API_CONFIG = {
-    baseURL: 'http://localhost/hoteles/src/control/apiController.php?tipo=', // Cambiar por tu dominio
+    baseURL: 'https://hoteles.programacion.com.pe/src/control/apiController.php?tipo=', // Cambiar por tu dominio
     token: '7bc59c804b140e6555b1f47bbc4be65388d5dbcd9c950507c0327fb14cac51d1-20251112-124' // Tu token de acceso
 };
 
