@@ -6,7 +6,12 @@
     <title>Búsqueda de Hoteles</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<script>
+        const base_url = '<?php echo BASE_URL; ?>';
+        const base_url_server = '<?php echo BASE_URL_SERVER; ?>';
+        const session_session = '<?php echo $_SESSION['sesion_id']; ?>';
+        const token_token = '<?php echo $_SESSION['sesion_token']; ?>';
+</script>
 </head>
 <body>
    <header>
@@ -71,7 +76,7 @@
             <p>&copy; 2025 HotelSeek. Todos los derechos reservados.</p>
         </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="<?php echo BASE_URL; ?>src/view/js/api.js"></script>
 </body>
 </html>

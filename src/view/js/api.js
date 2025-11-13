@@ -1,8 +1,38 @@
+document.addEventListener('DOMContentLoaded', function(){
+    BuscarToken();
+});
+//obtener token registrado en la base de datos - token del otro sistema 
+async function BuscarToken() {
+    try {
+        let data = new FormData();
+        data.append('token', token_token);
+        data.append('sesion', session_session);
+        let respuesta = await fetch(base_url+'src/control/tokenController.php?tipo=listarTokens',{
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: data
+        });
+        let json = await respuesta.json();
+        if(json.status){
+            let datos = json.contenido;
+            //guardar token en local storage
+            localStorage.setItem('tokenApi', datos[0].token);
+        }else{
+           console.log(json.mensaje);
+        }
+    } catch (e) {
+       console.log("error" + e); 
+    }
+}
 // ===== CONFIGURACIÓN DE LA API =====
 const API_CONFIG = {
-    baseURL: 'https://hoteles.programacion.com.pe/src/control/apiController.php?tipo=', // Cambiar por tu dominio
-    token: '83aef4639fa44974ec9186d339b25d6a56c3367be5b077e856a4bb85159e5e12-20251030-1' // Tu token de acceso
+    token: localStorage.getItem('tokenApi'), //dominio
+    baseURL: 'https://hoteles.programacion.com.pe/src/control/apiController.php?tipo=' //token de acceso
 };
+
+console.log(API_CONFIG.token);
+
 
 // ===== CACHE DE DATOS =====
 let hotelesCache = [];
@@ -71,9 +101,19 @@ async function fetchAPI(endpoint, method = 'GET', body = null) {
         const data = await response.json();
         
         if (!data.status) {
-            console.error('Error en API:', data.mensaje);
-            return { success: false, mensaje: data.mensaje, data: [] };
-        }
+    console.error('Error en API:', data.mensaje);
+
+    // Mostrar alerta con SweetAlert
+    Swal.fire({
+        icon: 'error',
+        title: 'Error en API',
+        text: data.mensaje || 'Ocurrió un error desconocido',
+        confirmButtonText: 'Aceptar'
+    });
+
+    return { success: false, mensaje: data.mensaje, data: [] };
+}
+
         
         return { success: true, data: data.contenido || [], mensaje: data.mensaje };
     } catch (error) {
@@ -192,7 +232,7 @@ function renderizarHoteles(hotelesArray) {
                     <span class="stat-label">Desde</span>
                 </div>
             </div>
-            <a href="habitaciones.html?id=${hotel.id}" class="btn-primary">
+            <a href="habitaciones?id=${hotel.id}" class="btn-primary">
                 Ver habitaciones →
             </a>
         `;
@@ -560,7 +600,7 @@ async function inicializarPaginaHabitaciones() {
 document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
     
-    if (path.includes('habitaciones.html')) {
+    if (path.includes('habitaciones')) {
         inicializarPaginaHabitaciones();
     } else {
         inicializarPaginaPrincipal();
