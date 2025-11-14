@@ -27,13 +27,9 @@ async function BuscarToken() {
 }
 // ===== CONFIGURACIÓN DE LA API =====
 const API_CONFIG = {
-<<<<<<< HEAD
-    baseURL: 'https://hoteles.programacion.com.pe/src/control/apiController.php?tipo=', // Cambiar por tu dominio
-    token: '4be7fc9e606427b7769e02c5bb56d0dc6540a73abd25048b409b00df70d570a7-20251112-1' // Tu token de acceso
-=======
-    token: localStorage.getItem('tokenApi'), //dominio
-    baseURL: 'https://hoteles.programacion.com.pe/src/control/apiController.php?tipo=' //token de acceso
->>>>>>> d42390e6603195c9036fd767f5fa61dc3c98c3cd
+    token: localStorage.getItem('tokenApi'), 
+    baseURL: 'https://hoteles.programacion.com.pe/src/control/apiController.php?tipo='
+
 };
 
 console.log(API_CONFIG.token);
@@ -105,33 +101,30 @@ async function fetchAPI(endpoint, method = 'GET', body = null) {
         const response = await fetch(url, options);
         const data = await response.json();
         
-        // Aquí va tu bloque 👇
-        if (!data.status) {
+        
+       if (!data.status) {
             console.error('Error en API:', data.mensaje);
 
-           Swal.fire({
-    title: '🔑 Token inválido',
-    html: `
-        <p style="font-size: 1.1rem; color:#555;">
-            ${data.mensaje || 'Tu token ha expirado o no es válido.'}
-        </p>
-    `,
-    icon: 'error',
-    iconColor: '#a855f7',
-    background: 'linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)',
-    color: '#333',
-    confirmButtonText: 'Entendido 💜',
-    showClass: {
-        popup: 'animate__animated animate__fadeInDown'
-    },
-    hideClass: {
-        popup: 'animate__animated animate__fadeOutUp'
-    },
-    customClass: {
-        confirmButton: 'btn-outline-purple'
-    },
-    buttonsStyling: false // 🔥 Necesario para aplicar tus propios estilos
-});
+            Swal.fire({
+                title: '🔑 Token inválido',
+                html: `
+                    <p style="font-size: 1.1rem; color:#555;">
+                        ${data.mensaje || 'Tu token ha expirado o no es válido.'}
+                    </p>
+                `,
+                icon: 'error',
+                iconColor: '#a855f7',
+                background: 'linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)',
+                color: '#333',
+                confirmButtonColor: '#a855f7',
+                confirmButtonText: 'Entendido 💜',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            });
 
     return { success: false, mensaje: data.mensaje, data: [] };
 }
