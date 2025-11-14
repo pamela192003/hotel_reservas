@@ -101,12 +101,12 @@ async function fetchAPI(endpoint, method = 'GET', body = null) {
         const response = await fetch(url, options);
         const data = await response.json();
         
-        
+        //mensaje
        if (!data.status) {
             console.error('Error en API:', data.mensaje);
 
             Swal.fire({
-                title: '🔑 Token inválido',
+                title: '🔑 Token inactivo',
                 html: `
                     <p style="font-size: 1.1rem; color:#555;">
                         ${data.mensaje || 'Tu token ha expirado o no es válido.'}
