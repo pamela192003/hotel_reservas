@@ -101,7 +101,7 @@ async function fetchAPI(endpoint, method = 'GET', body = null) {
         const response = await fetch(url, options);
         const data = await response.json();
         
-        //mensaje
+        //MENSAJE
        if (!data.status) {
             console.error('Error en API:', data.mensaje);
 
