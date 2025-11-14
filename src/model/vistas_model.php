@@ -21,6 +21,8 @@ class vistaModelo
              $contenido = "reset-password";
         }elseif ($vista == "api") {
              $contenido = "api";
+        }elseif ($vista == "habitaciones") {
+             $contenido = "habitaciones";
         }else{
             $contenido = "404";
         }

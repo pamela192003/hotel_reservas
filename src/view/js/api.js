@@ -1,8 +1,43 @@
+document.addEventListener('DOMContentLoaded', function(){
+    BuscarToken();
+});
+//obtener token registrado en la base de datos - token del otro sistema 
+async function BuscarToken() {
+    try {
+        let data = new FormData();
+        data.append('token', token_token);
+        data.append('sesion', session_session);
+        let respuesta = await fetch(base_url+'src/control/tokenController.php?tipo=listarTokens',{
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: data
+        });
+        let json = await respuesta.json();
+        if(json.status){
+            let datos = json.contenido;
+            //guardar token en local storage
+            localStorage.setItem('tokenApi', datos[0].token);
+        }else{
+           console.log(json.mensaje);
+        }
+    } catch (e) {
+       console.log("error" + e); 
+    }
+}
 // ===== CONFIGURACIÓN DE LA API =====
 const API_CONFIG = {
+<<<<<<< HEAD
     baseURL: 'https://hoteles.programacion.com.pe/src/control/apiController.php?tipo=', // Cambiar por tu dominio
     token: '4be7fc9e606427b7769e02c5bb56d0dc6540a73abd25048b409b00df70d570a7-20251112-1' // Tu token de acceso
+=======
+    token: localStorage.getItem('tokenApi'), //dominio
+    baseURL: 'https://hoteles.programacion.com.pe/src/control/apiController.php?tipo=' //token de acceso
+>>>>>>> d42390e6603195c9036fd767f5fa61dc3c98c3cd
 };
+
+console.log(API_CONFIG.token);
+
 
 // ===== CACHE DE DATOS =====
 let hotelesCache = [];
@@ -70,10 +105,37 @@ async function fetchAPI(endpoint, method = 'GET', body = null) {
         const response = await fetch(url, options);
         const data = await response.json();
         
+        // Aquí va tu bloque 👇
         if (!data.status) {
             console.error('Error en API:', data.mensaje);
-            return { success: false, mensaje: data.mensaje, data: [] };
-        }
+
+           Swal.fire({
+    title: '🔑 Token inválido',
+    html: `
+        <p style="font-size: 1.1rem; color:#555;">
+            ${data.mensaje || 'Tu token ha expirado o no es válido.'}
+        </p>
+    `,
+    icon: 'error',
+    iconColor: '#a855f7',
+    background: 'linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)',
+    color: '#333',
+    confirmButtonText: 'Entendido 💜',
+    showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+    },
+    customClass: {
+        confirmButton: 'btn-outline-purple'
+    },
+    buttonsStyling: false // 🔥 Necesario para aplicar tus propios estilos
+});
+
+    return { success: false, mensaje: data.mensaje, data: [] };
+}
+
         
         return { success: true, data: data.contenido || [], mensaje: data.mensaje };
     } catch (error) {
@@ -192,7 +254,7 @@ function renderizarHoteles(hotelesArray) {
                     <span class="stat-label">Desde</span>
                 </div>
             </div>
-            <a href="habitaciones.html?id=${hotel.id}" class="btn-primary">
+            <a href="habitaciones?id=${hotel.id}" class="btn-primary">
                 Ver habitaciones →
             </a>
         `;
@@ -560,7 +622,7 @@ async function inicializarPaginaHabitaciones() {
 document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
     
-    if (path.includes('habitaciones.html')) {
+    if (path.includes('habitaciones')) {
         inicializarPaginaHabitaciones();
     } else {
         inicializarPaginaPrincipal();
