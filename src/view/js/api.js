@@ -106,7 +106,7 @@ async function fetchAPI(endpoint, method = 'GET', body = null) {
             console.error('Error en API:', data.mensaje);
 
             Swal.fire({
-                title: '🔑 Token inactivo',
+                title: '🔑 Token inválido',
                 html: `
                     <p style="font-size: 1.1rem; color:#555;">
                         ${data.mensaje || 'Tu token ha expirado o no es válido.'}
